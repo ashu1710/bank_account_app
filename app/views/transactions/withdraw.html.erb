@@ -1,0 +1,43 @@
+<%= render 'layouts/user_header' %>
+
+<div class="container">
+    <%= form_for(@card, html: {class: 'card_form'}) do |f| %>
+    	<div class="rows">
+    		<div class="col-md-2"></div>
+    		<div class="col-md-8">
+    			<div class="row">
+    				<div class="col-md-10">
+    					<%= f.text_field :amount,placeholder: 'Amount', class: 'form-control amount-field'  %>
+    				</div>
+    				<div class="col-md-2">
+    					<%= link_to 'Add Money','javascript:void(0)' ,class: 'btn btn-success btn-add-money' %>
+    				</div>
+    			</div>
+    		</div>
+    		<div class="col-md-2"></div>
+    	</div>
+    	<div class="col-md-12 card_div d-none ">
+                <div class="form-row">
+                    <div class="col-md-9">
+                        <label for="card_number">Card Number</label>
+                        <%= f.text_field :card_num, class: 'form-control', placeholder: 'Card Number' %>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="rows">
+                            <label for="exp_date">Exp. Date*</label>
+                            <%= f.text_field :month, class: 'form-control exp_date', placeholder: 'Month' %>
+                            <%= f.text_field :year, class: 'form-control exp_date',placeholder: 'Year' %>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="cvv">CVV *</label>
+                        <%= f.text_field :cvv, class: 'form-control', placeholder: 'CVV' %>
+                    </div>
+                    <div class="col-md-12">
+                        <%= f.submit 'Add', class: "btn btn-success btn-add-card-payment" %>
+                    </div>
+                </div>
+    	</div>
+    <% end %>
+
+</div>

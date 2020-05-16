@@ -1,0 +1,25 @@
+<%= render 'layouts/user_header' %>
+<div class="container">
+    <div class="row">
+        <%= form_for(@account, html: {class: 'transfer_form'}) do |f| %>
+            <%= hidden_field_tag :balance, current_user.account.acc_balance.to_i %>
+        	<div class="col-md-12">
+                    <div class="form-row">
+                        <div class="col-md-12">
+                            <label for="card_number">Account Number</label>
+                            <%= f.text_field :acc_number, class: 'form-control' %>
+                        </div>
+
+                        <div class="col-md-12">
+                            <label for="card_number">Account Balance</label>
+                            <%= f.text_field :acc_balance, class: 'form-control' %>
+                        </div>
+
+                        <div class="col-md-12">
+                            <%= f.submit 'Transfer', class: "btn btn-success btn-transfer-money" %>
+                        </div>
+                    </div>
+        	</div>
+        <% end %>
+    </div>
+</div>

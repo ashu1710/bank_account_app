@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  transaction_date: 2020-05-16
+  amount: 1
+  from_account_id: 1
+  to_account_id: 1
+  account_num: MyString
+  ifsc_code: MyString
+
+two:
+  transaction_date: 2020-05-16
+  amount: 1
+  from_account_id: 1
+  to_account_id: 1
+  account_num: MyString
+  ifsc_code: MyString

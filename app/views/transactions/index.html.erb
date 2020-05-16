@@ -1,0 +1,25 @@
+<%= render 'layouts/user_header' %>
+<table class="table">
+	<tr>
+		<th>#</th>
+		<th>Transaction Type</th>
+		<th> Amount </th>
+		<th> Transactin date </th>
+		<th> To Account Number </th>
+		<th> From Account Number </th>
+		<th> Bank Account number  </th>
+		<th> IFSC Code  </th>
+	</tr>
+	<% @transactions.each_with_index do |trans, index| %>
+		<tr>
+			<td><%= index + 1 %></td>
+			<td><%= trans.transactions_type %></td>
+			<td><%= trans.amount %></td>
+			<td><%= trans.transaction_date %></td>
+			<td><%= trans.to_account_num %></td>
+			<td><%= trans.from_account_num.present? ? trans.from_account_num  : '-' %></td>
+			<td><%= trans.acc_number.present? ? trans.acc_number: '-'  %></td>
+			<td><%= trans.ifsc_code.present? ? trans.ifsc_code : '-' %></td>
+		</tr>
+	<% end %>
+</table>
